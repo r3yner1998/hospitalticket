@@ -5,6 +5,12 @@
       "icon": "menu-icon tf-icons bx bx-home",
       "name": "Home",
       "slug": "Home"
+    },
+    {
+      "url": "/",
+      "icon": "menu-icon tf-icons bx bx-home",
+      "name": "Home",
+      "slug": "Home"
     }
   ]
 }
