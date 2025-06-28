@@ -27,10 +27,11 @@
           <h4 class="mb-1">Bienvenido! 👋</h4>
           <p class="mb-6">Inicia sesión para comenzar.</p>
 
-          <form id="formAuthentication" class="mb-6" action="{{url('/')}}" method="GET">
+          <form id="formAuthentication" class="mb-6" action="{{url('/login')}}" method="POST">
+            @csrf
             <div class="mb-6">
               <label for="email" class="form-label">Correo o Usuario</label>
-              <input type="text" class="form-control" id="email" name="email-username" placeholder="Ingrese su Correo o Usuario" autofocus>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese su Correo o Usuario" autofocus>
             </div>
             <div class="mb-6 form-password-toggle">
               <label class="form-label" for="password">Contraseña</label>
@@ -53,9 +54,15 @@
               </div>
             </div>
             <div class="mb-6">
-              <button class="btn btn-primary d-grid w-100" type="submit">Inisiar Sesión</button>
+              <button class="btn btn-primary d-grid w-100" type="submit">Iniciar Sesión</button>
             </div>
           </form>
+
+          @if($errors->isNotEmpty())
+              <div class="alert alert-danger mt-3" role="alert">
+                  {{$errors->first()}}
+              </div>
+          @endif
 
           <p class="text-center">
             <span>¿No tienes cuenta?</span>
